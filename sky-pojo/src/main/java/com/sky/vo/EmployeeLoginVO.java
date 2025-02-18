@@ -10,6 +10,10 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 @Data
+/*
+lombok注解，自动生成构造函数、get、set方法、toString方法，
+并提供builder模式：EmployeeLoginVO.builder().id(1L).userName("admin").name("管理员").build()
+ */
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
