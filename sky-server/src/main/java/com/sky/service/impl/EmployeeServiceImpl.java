@@ -103,4 +103,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         return pageResult;
     }
 
+    /*
+     * 启用/禁用员工
+     */
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        // update employee set status = #{status} where id = #{id}
+
+        // 创建Employee对象
+        Employee employee = Employee.builder()
+                .status(status).id(id).updateUser(BaseContext.getCurrentId()).updateTime(LocalDateTime.now()).build();
+        // 根据id更新员工状态
+        employeeMapper.updateStatus(employee);
+    }
+
 }
